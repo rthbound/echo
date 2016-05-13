@@ -3,8 +3,8 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-	<title>Tweet to WV for Bernie</title>
-	<meta name="description" content="WV for Bernie Sanders"/>
+	<title>Tweet Up A Storm | #TeamSecondWave</title>
+	<meta name="description" content="Tweet Up A Storm for Bernie"/>
 	<meta name="mobile-web-app-capable" content="yes">
 
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
@@ -63,9 +63,10 @@ Lora:400,700italic,700,400italic' rel='stylesheet' type='text/css'>
       $.get("https://morning-bayou-66804.herokuapp.com/sheets/5", function(data){
         var html = $.map(data, function(el,i){
           el = el.replace(/["]+/g, '')
-          $(".row").append($("<p><small>" + i + "</small><a class='btn button-hvr-shadow-radial' href='https://twitter.com/intent/tweet?text="
+          el = el.replace(/:flame:/g, '🔥')
+          $(".row").append($("<p><small>" + i + "</small><a class='btn button-hvr-shadow-radial' href=\"https://twitter.com/intent/tweet?text="
                               + encodeURIComponent(el)
-                              + "' target='_blank'><span><strong>"
+                              + "\" target='_blank'><span><strong>"
                               + el.split(" ")[0] + "</strong></span></a></p>"));
           });
       })
